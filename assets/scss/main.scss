@@ -1,0 +1,32 @@
+@import "./_variables.scss";
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "./_overrides.scss";
+@import "./custom.scss";
+@import "./loaders.scss";
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: $body-bg;
+}
+
+main {
+  flex-grow: 1;
+}
+
+main>.container-fluid {
+  min-height: 89vh;
+}
+
+.color-box {
+  height: 1em;
+  width: 1em;
+  border: 1px solid black;
+}
+
+.object-fit-img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
