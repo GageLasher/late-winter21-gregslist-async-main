@@ -18,6 +18,7 @@ class AppState extends EventEmitter {
   // NOTE just adds intellisense to our cars array that lets our code know its an array of cars, not other things 
   /** @type {import('./Models/Car').Car[]} */
   cars = [testCar]
+  houses = []
 }
 
 
