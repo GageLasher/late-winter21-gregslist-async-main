@@ -12,6 +12,21 @@ class JobsService {
         let realJob = new Job(res.data)
         ProxyState.jobs = [realJob, ...ProxyState.jobs]
       }
+     
+      async deleteJob(jobId) {
+        const res = await api.delete('jobs/' + jobId)
+
+        ProxyState.jobs = ProxyState.jobs.filter(j => j.id != jobId)
+      }
+      async editJob(updatedJob, id) {
+    
+        const res = await api.put('jobs/' + id, updatedJob)
+     
+        const jobIndex = ProxyState.jobs.findIndex(j => j.id == id)
+        ProxyState.jobs.splice(jobIndex, 1, new Job(res.data))
+        ProxyState.jobs = ProxyState.jobs
+    
+      }
 }
 
 

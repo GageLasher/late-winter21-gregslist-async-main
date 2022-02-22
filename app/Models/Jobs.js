@@ -17,8 +17,8 @@ export class Job {
                 <p>${this.description}</p>
                 <p>$${this.rate} Hour</p>
                 <div class="text-end">
-                <button class="btn btn-outline-warning" onclick="app.housesController.editHouse('${this.id}')"> Edit </button>
-                <button class="btn btn-outline-danger" onclick="app.housesController.deleteHouse('${this.id}')"> delete </button>
+                <button class="btn btn-outline-warning" onclick="app.jobsController.editJob('${this.id}')"> Edit </button>
+                <button class="btn btn-outline-danger" onclick="app.jobsController.deleteJob('${this.id}')"> delete </button>
                 </div>
               </div>
             </div>

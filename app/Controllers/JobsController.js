@@ -47,4 +47,24 @@ export class JobsController {
           Pop.toast(error.message, 'error')
         }
       }
+      async deleteJob(jobId) {
+        try {
+          if (await Pop.confirm()) {
+            
+            // NOTE just passes the ID of the Job to be deleted
+            await jobsService.deleteJob(jobId)
+          }
+        } catch (error) {
+          console.error(error)
+          Pop.error(error)
+        }
+      }
+    
+      editJob(jobId) {
+        const job = ProxyState.jobs.find(j => j.id == jobId)
+        document.getElementById('modal-body-slot').innerHTML = getJobForm(job)
+        let modal = document.getElementById('new-listing')
+        bootstrap.Modal.getOrCreateInstance(modal).toggle()
+    
+      }
 }
